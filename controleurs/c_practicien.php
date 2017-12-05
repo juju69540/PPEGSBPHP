@@ -8,5 +8,10 @@ switch($action){
 		include("vues/v_practicien.php");
 		break;
 	}
+	case 'modifpracticien' : {
+		$lesPracticiens=$pdo->getLesPracticiens();
+		include("vues/v_modifier.php");
+		break;
+	}
 }
 ?>
