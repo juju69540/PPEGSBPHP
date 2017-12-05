@@ -26,7 +26,7 @@
 				}
 			?>
 			<li class="smenu">
-              <a href="index.php?uc=practicien&action=selectionnerMois" title="practicien">Practicien</a>
+              <a href="index.php?uc=practicien&action=selectpracticien" title="practicien">Practicien</a>
            </li>
  	   <li class="smenu">
               <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
