@@ -53,27 +53,13 @@ class PdoGsb{
  * @param $mdp
  * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 */
-	public function getInfosVisiteur($login, $mdp)
-	{
+	public function getInfosVisiteur($login, $mdp){
 		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
 		where visiteur.login='$login' and visiteur.mdp='$mdp'";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
 	}
-	public function estGestionnaire($id)
-	{
-		$reponse = false;
-		$req = "Select type FROM visiteur where id = '$id'";
-		$res = PdoGsb::$monPdo->query($req);
-		$laligne = $res->fetch();
-		if($laligne['type'] == "gestionnaire")
-		{
-			$reponse = true;
-		}
-		return $reponse;
-	}
-	
 
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
@@ -312,17 +298,28 @@ class PdoGsb{
 		PdoGsb::$monPdo->exec($req);
 	}
 	
-	public function getLesFraisForfais(){
-		$req = "select id,libelle,montant from fraisforfait;";
+	public function getselectFraisForfait(){
+		$req = "SELECT id,libelle, montant FROM fraisforfait";
 		$res = PdoGsb::$monPdo->query($req);
-		$lesLignes = $res->fetchAll();
-		return $lesLignes;
+		$laLigne = $res->fetchAll();
+		return $laLigne; 
 	}
 	
-		public function setFraisForfais($id,$montant){
-		$req = "update fraisforfait set montant=$montant where id ='$id'";
+	public function getmodifFraisForfait($id,$montant){
+		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
 		echo $req;
 		PdoGsb::$monPdo->exec($req);
+	}
+	
+	public function Gestionnaire($id){
+		$g = false;
+		$req = "select type from visiteur where id='$id'";
+		$res = PdoGsb::$monPdo->query($req);
+		$ligne = $res->fetch();
+		if($ligne['type']=='gestionnaire'){
+			$g = true;
+		}
+		return $g;
 	}
 }
 ?>
