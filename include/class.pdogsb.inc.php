@@ -310,6 +310,16 @@ class PdoGsb{
 		echo $req;
 		PdoGsb::$monPdo->exec($req);
 	}
+
+	public function getLesPracticiens(){
+		$req = "SELECT practicien.Nom as nom, practicien.Social as social, practicien.Adresse as adresse, practicien.Telephone as telephone,
+				practicien.Contact as contact, practicien.Coefficiant_notorieter as coefnoto, practicien.Coefficiant_confiance as coefconfiance
+				from practicien";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes; 
+	}
+	
 	
 	public function Gestionnaire($id){
 		$g = false;
@@ -322,11 +332,10 @@ class PdoGsb{
 		return $g;
 	}
 /*
- * @param $idVisiteur 
  * @return un tableau avec les champs d'informations des visiteurs 
 */	
 	public function getLesVisiteurs(){
-		$req = "select id,nom,prenom,login,mdp,adresse,cp,ville,dateEmbauche from  visiteur;";
+		$req = "select * from  visiteur;";
 		$res = PdoGsb::$monPdo->query($req);
 		$laLigne = $res->fetchAll();
 		return $laLigne;
