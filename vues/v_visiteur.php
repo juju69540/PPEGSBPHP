@@ -2,6 +2,7 @@
 	<h2>Les visiteurs</h2>
 	<table>
 		<tr>
+			<th></th>
 			<th>ID</th>
 			<th>Nom</th>
 			<th>Prenom</th>
@@ -27,6 +28,7 @@
 					$uneDateE = $unVisiteur['dateEmbauche'];
 			?>
 			<tr>
+				<td><INPUT type="checkbox" name="selectionner" value="cocher"></td>
 				<td><?php echo $unID ?></td>
 				<td><?php echo $unNom ?></td>
 				<td><?php echo $unPrenom ?></td>
@@ -42,4 +44,6 @@
 				?>
 		</tr>
 	</table>
+	<INPUT type="button" name="nom" value="Modifier">
+	<INPUT type="button" name="nom" value="Supprimer">
 </div>
