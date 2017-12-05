@@ -1,12 +1,5 @@
 ﻿    <!-- Division pour le sommaire -->
-    <div id="menuGauche">
-     <div id="infosUtil">
-    
-        <h2>
-    
-</h2>
-    
-      </div>  
+    <div id="menuGauche">  
         <ul id="menuList">
 			<li >
 				  Visiteur :<br>
@@ -26,7 +19,10 @@
 				}
 			?>
 			<li class="smenu">
-              <a href="index.php?uc=visiteur&action=Visiteur" title="Visiteur">Visiteur</a>
+              <a href="index.php?uc=practicien&action=selectionnerMois" title="practicien">Practicien</a>
+            </li>
+			<li class="smenu">
+              <a href="index.php?uc=visiteur&action=lesVisiteurs" title="lesVisiteurs">Les Visiteurs</a>
             </li>
 			<li class="smenu">
               <a href="index.php?uc=practicien&action=selectpracticien" title="practicien">Practicien</a>

@@ -331,5 +331,15 @@ class PdoGsb{
 		}
 		return $g;
 	}
+/*
+ * @param $idVisiteur 
+ * @return un tableau avec les champs d'informations des visiteurs 
+*/	
+	public function getLesVisiteurs(){
+		$req = "select id,nom,prenom,login,mdp,adresse,cp,ville,dateEmbauche from  visiteur;";
+		$res = PdoGsb::$monPdo->query($req);
+		$laLigne = $res->fetchAll();
+		return $laLigne;
+	}
 }
 ?>
