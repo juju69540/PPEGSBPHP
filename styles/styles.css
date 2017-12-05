@@ -10,7 +10,7 @@ body{
 }
 #page {
   background-color:white;
-  width : 65%;
+  /*width : 65%;*/
   margin : auto ;
   border : 0.2em solid black;
   padding : 0.1em;
@@ -229,7 +229,7 @@ taille de caractères légèrement supérieure à la normale */
 #contenu th {  
    background-color:#77AADD;
    height:21px;
-   text-align:left;
+   text-align:center;
    vertical-align:top;
    font-weight:bold;
    border-bottom:0.1em solid #777777;
@@ -238,6 +238,7 @@ taille de caractères légèrement supérieure à la normale */
 
 #contenu td {
    border :1px solid #777777;
+   text-align:center;
 }
 
 #contenu h3 {
