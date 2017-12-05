@@ -19,9 +19,6 @@
 				}
 			?>
 			<li class="smenu">
-              <a href="index.php?uc=practicien&action=selectionnerMois" title="practicien">Practicien</a>
-            </li>
-			<li class="smenu">
               <a href="index.php?uc=visiteur&action=lesVisiteurs" title="lesVisiteurs">Les Visiteurs</a>
             </li>
 			<li class="smenu">
