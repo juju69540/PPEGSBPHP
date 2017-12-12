@@ -1,5 +1,6 @@
 <div id="contenu">
 	<h2>Les visiteurs</h2>
+	<form name="afficher" action="v_visiteur.php" method="post">
 	<table>
 		<tr>
 			<th></th>
@@ -44,10 +45,9 @@
 				?>
 		</tr>
 	</table>
-	<form name="button" action="v_visiteur.php" method="post">
 	<input type="button" name="modifier" value="Modifier">
 	<input type="button" name="supprimer" value="Supprimer">
-	<input type="button" name="ajouter" value="Ajouter">
+	<a href="index.php?uc=visiteur&action=ajouterVisiteurs" title="ajouterVisiteurs"><input type="button" name="ajouter" value="Ajouter"></a>
 	</form>
 	
 </div>
