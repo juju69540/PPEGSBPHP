@@ -28,7 +28,7 @@
 					$uneDateE = $unVisiteur['dateEmbauche'];
 			?>
 			<tr>
-				<td><INPUT type="checkbox" name="selectionner" value="cocher"></td>
+				<td><input type="checkbox" name="selectionner" value="cocher"></td>
 				<td><?php echo $unID ?></td>
 				<td><?php echo $unNom ?></td>
 				<td><?php echo $unPrenom ?></td>
@@ -44,6 +44,10 @@
 				?>
 		</tr>
 	</table>
-	<INPUT type="button" name="nom" value="Modifier">
-	<INPUT type="button" name="nom" value="Supprimer">
+	<form name="button" action="v_visiteur.php" method="post">
+	<input type="button" name="modifier" value="Modifier">
+	<input type="button" name="supprimer" value="Supprimer">
+	<input type="button" name="ajouter" value="Ajouter">
+	</form>
+	
 </div>
