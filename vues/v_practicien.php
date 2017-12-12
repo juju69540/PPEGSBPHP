@@ -36,8 +36,11 @@
 				<form action="index.php?uc=practicien&action=modifpracticien" method="post">
 					<input type="submit" value="Modifier">
 				</form>
-				<form action="v_supprimer.php"method="post">
-					<input type="submit"  value="Valider">
+				<form action="index.php?uc=practicien&action=ajout"method="post">
+					<input type="submit"  value="Ajouter">
+				</form>
+				<form action="index.php?uc=practicien&action=supp"method="post">
+					<input type="submit"  value="Supprimer">
 				</form>
 			  </td>
 		   </tr>
