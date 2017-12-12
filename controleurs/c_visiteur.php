@@ -8,5 +8,10 @@ switch($action){
 	include("vues/v_visiteur.php");
 	break;
 	}
+	
+	case 'ajouterVisiteurs':{
+	include ("vues/v_ajouterVisiteur.php");
+	break;
+	}
 }
 ?>
