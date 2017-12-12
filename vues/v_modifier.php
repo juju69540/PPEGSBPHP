@@ -25,8 +25,7 @@
 	   ?>
 	   
 		   <tr>
-			  <td><input type="text"><?php echo $nom?></input></td>
-			  <input type="text" id="id" name=<?php echo $nom ?> size="10" maxlength="5"" >
+			  <td><?php echo $nom?></td>
 			  <td><?php echo $social?></td>
 			  <td><?php echo $adresse?></td>
 			  <td><?php echo $telephone?></td>
@@ -34,7 +33,7 @@
 			  <td><?php echo $coefnoto?></td>
 			  <td><?php echo $coefconfiance?></td>
 			  <td>
-				<form action="modifier.php" method="post">
+				<form action="index.php?uc=practicien&action=modif" method="post">
 					<input type="submit" value="Modifier">
 				</form>
 			  </td>

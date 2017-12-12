@@ -317,7 +317,29 @@ class PdoGsb{
 				from practicien";
 		$res = PdoGsb::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
-		return $lesLignes; 
+		return $lesLignes;
+	}
+	
+	public function getLesPracticiensAjout($nom,$social,$adresse,$telephone,$contact,$coefnoto,$coefconfiance){
+		$req = "INSERT INTO `practicien`(`Nom`, `Social`, `Adresse`, `Telephone`, `Contact`, `Coefficiant_notorieter`, `Coefficiant_confiance`)
+				VALUES ($nom,$social,$adresse,$telephone,$contact,$coefnoto,$coefconfiance)";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+	
+	public function getLesPracticiensModif(){
+		$req = "mettre la requette";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+	
+	public function getLesPracticiensSupp(){
+		$req = "mettre la requette";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
 	}
 	
 	
