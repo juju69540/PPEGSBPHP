@@ -100,4 +100,8 @@ tr th {
     background-size: cover;
 }
 
+td {
+	text-align:center;
+}
+
 /*style Julian*/

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div id="contenu">
 	<h2>Les visiteurs</h2>
 	<form name="afficher" action="v_visiteur.php" method="post">
@@ -56,6 +57,12 @@
 	<div id="contenu">
 		<h2>Les visiteurs</h2>
 		<table class="table table-borderless">
+=======
+<div class="container">
+	<div id="contenu">
+		<h2>Les visiteurs</h2>
+		<table class="table table-borderless" style="margin-left:5px;">
+>>>>>>> devJulian
 			<thead class="thead-light">
 				<tr>
 					<th></th>
@@ -103,6 +110,10 @@
 			</table>
 		<INPUT type="button" name="nom" value="Modifier">
 		<INPUT type="button" name="nom" value="Supprimer">
+<<<<<<< HEAD
 	</div>
 >>>>>>> devJulien
+=======
+	</div>
+>>>>>>> devJulian
 </div>

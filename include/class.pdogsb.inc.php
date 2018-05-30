@@ -675,7 +675,17 @@ class PdoGsb{
 	
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
-		
+		echo $req;
+		PdoGsb::$monPdo->exec($req);
+	}
+
+	public function getLesPracticiens(){
+		$req = "SELECT practicien.Nom as nom, practicien.Social as social, practicien.Adresse as adresse, practicien.Telephone as telephone,
+				practicien.Contact as contact, practicien.Coefficiant_notorieter as coefnoto, practicien.Coefficiant_confiance as coefconfiance
+				from practicien";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes; 
 		PdoGsb::$monPdo->exec($req);
 	}
 
