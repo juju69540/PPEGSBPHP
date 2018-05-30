@@ -26,8 +26,8 @@ switch($uc){
 		include("controleurs/c_modifierFrais.php");
 		break; 
 	}
-	case 'practicien' :{
-		include("controleurs/c_practicien.php");
+	case 'praticien' :{
+		include("controleurs/c_praticien.php");
 		break; 
 	}
 	case 'visiteur' :{

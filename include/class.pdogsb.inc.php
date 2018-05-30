@@ -308,45 +308,41 @@ class PdoGsb{
 	
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
-		echo $req;
+		
 		PdoGsb::$monPdo->exec($req);
 	}
 
-	//requete pour les practiciens
+	//requete pour les praticiens
 
-	public function getLesPracticiens(){
-		// $req = "SELECT  practicien.id as id, practicien.nom as nom, practicien.social as social, practicien.adresse as adresse, practicien.telephone as telephone,
-		// 		practicien.contact as contact, practicien.coefficiant_notorieter as coefnoto, practicien.coefficiant_confiance as coefconfiance
-		// 		from practicien";
-		// $req = "SELECT * FROM `practicien`";
-		$req = "SELECT * FROM practicien, spe_practicien where practicien.specialite = spe_practicien.id";
+	public function getLesPraticiens(){
+		$req = "SELECT * FROM praticien, spe_praticien where praticien.specialite = spe_praticien.id";
 		$res = PdoGsb::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		// var_dump($lesLignes);
 		return $lesLignes;
 	}
-	public function getLesSpecialitePracticiens(){
-		$req = "SELECT * FROM spe_practicien";
+	public function getLesSpecialitePraticiens(){
+		$req = "SELECT * FROM spe_praticien";
 		$res = PdoGsb::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
 	
-	public function setLesPracticiensAjout($nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
-		$req = "INSERT INTO practicien(`nom`, `social`, `adresse`, `telephone`, `contact`, `coefficiant_notorieter`, `coefficiant_confiance`, `specialite`)
+	public function setLesPraticiensAjout($nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
+		$req = "INSERT INTO praticien(`nom`, `social`, `adresse`, `telephone`, `contact`, `coefficiant_notorieter`, `coefficiant_confiance`, `specialite`)
 				VALUES ('$nom','$social','$adresse','$telephone','$contact','$coefficiant_notorieter','$coefficiant_confiance','$specialite')";
 		// var_dump($req);
 		PdoGsb::$monPdo->query($req);
 	}
 	
-	public function setLesPracticiensModif($id,$nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
-		$req = "UPDATE practicien SET nom='".$nom."',social='".$social."',adresse='".$adresse."', telephone='".$telephone."',contact='".$contact."',coefficiant_notorieter='".$coefficiant_notorieter."',coefficiant_confiance='".$coefficiant_confiance."',specialite='".$specialite."' where id='".$id."';";
+	public function setLesPraticiensModif($id,$nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
+		$req = "UPDATE praticien SET nom='".$nom."',social='".$social."',adresse='".$adresse."', telephone='".$telephone."',contact='".$contact."',coefficiant_notorieter='".$coefficiant_notorieter."',coefficiant_confiance='".$coefficiant_confiance."',specialite='".$specialite."' where id='".$id."';";
 		// var_dump($req);
 		PdoGsb::$monPdo->query($req);
 	}
 
-	public function setLesPracticiensSupp($id){
-		$req = "DELETE FROM `practicien` where id='".$id."';";
+	public function setLesPraticiensSupp($id){
+		$req = "DELETE FROM `praticien` where id='".$id."';";
 		// var_dump($req);
 		PdoGsb::$monPdo->query($req);
 	}

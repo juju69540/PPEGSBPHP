@@ -160,7 +160,10 @@ ul#menuList a:hover {
   margin-top:0em;
 }
 form {
-  margin-bottom:1em;  
+  margin-bottom:1em;
+}
+.connexion{
+  text-align: center;
 }
 .corpsForm legend {
   font-weight:bold;
