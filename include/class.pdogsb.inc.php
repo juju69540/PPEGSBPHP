@@ -16,18 +16,11 @@
  */
 
 class PdoGsb{   		
-<<<<<<< HEAD
-      	private static $serveur='mysql:host=172.17.21.13';
-      	private static $bdd='dbname=gsbfrais';   		
-      	private static $user='root' ;    		
-      	private static $mdp='mdp' ;	
-=======
       	// private static $serveur='mysql:host=172.17.21.13';
       	private static $serveur='mysql:host=localhost';
       	private static $bdd='dbname=gsbfrais';   		
       	private static $user='root' ;    		
       	private static $mdp='root' ;	
->>>>>>> devJulien
 		private static $monPdo;
 		private static $monPdoGsb=null;
 /**
@@ -315,7 +308,6 @@ class PdoGsb{
 	
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
-<<<<<<< HEAD
 		echo $req;
 		PdoGsb::$monPdo->exec($req);
 	}
@@ -327,10 +319,6 @@ class PdoGsb{
 		$res = PdoGsb::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes; 
-	}
-	
-=======
-		
 		PdoGsb::$monPdo->exec($req);
 	}
 
@@ -368,7 +356,6 @@ class PdoGsb{
 		// var_dump($req);
 		PdoGsb::$monPdo->query($req);
 	}
->>>>>>> devJulien
 	
 	public function Gestionnaire($id){
 		$g = false;
