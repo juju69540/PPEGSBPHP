@@ -1,7 +1,7 @@
 <div class="container">
 	<div id="contenu">
 		<h2>Les visiteurs</h2>
-		<table class="table table-borderless">
+		<table class="table table-borderless" style="margin-left:5px;">
 			<thead class="thead-light">
 				<tr>
 					<th></th>
