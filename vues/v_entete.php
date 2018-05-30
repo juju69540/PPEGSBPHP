@@ -16,7 +16,7 @@
       $monUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       
       // echo $monUrl;
-      if($monUrl == 'http://localhost/PPEGSBPHP%20-%20Copie/index.php?uc=connexion&action=valideConnexion' || $monUrl == 'http://localhost/PPEGSBPHP%20-%20Copie/' || $monUrl == 'http://localhost/PPEGSBPHP%20-%20Copie/index.php?uc=connexion&action=deconnexion')
+      if($monUrl == 'http://localhost/PPEGSBPHP/index.php?uc=connexion&action=valideConnexion' || $monUrl == 'http://localhost/PPEGSBPHP/' || $monUrl == 'http://localhost/PPEGSBPHP/index.php?uc=connexion&action=deconnexion')
         {
 
         }
