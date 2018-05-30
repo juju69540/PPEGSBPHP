@@ -16,10 +16,18 @@
  */
 
 class PdoGsb{   		
+<<<<<<< HEAD
       	private static $serveur='mysql:host=172.17.21.13';
       	private static $bdd='dbname=gsbfrais';   		
       	private static $user='root' ;    		
       	private static $mdp='mdp' ;	
+=======
+      	// private static $serveur='mysql:host=172.17.21.13';
+      	private static $serveur='mysql:host=localhost';
+      	private static $bdd='dbname=gsbfrais';   		
+      	private static $user='root' ;    		
+      	private static $mdp='root' ;	
+>>>>>>> devJulien
 		private static $monPdo;
 		private static $monPdoGsb=null;
 /**
@@ -307,6 +315,7 @@ class PdoGsb{
 	
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
+<<<<<<< HEAD
 		echo $req;
 		PdoGsb::$monPdo->exec($req);
 	}
@@ -320,6 +329,46 @@ class PdoGsb{
 		return $lesLignes; 
 	}
 	
+=======
+		
+		PdoGsb::$monPdo->exec($req);
+	}
+
+	//requete pour les praticiens
+
+	public function getLesPraticiens(){
+		$req = "SELECT * FROM praticien, spe_praticien where praticien.specialite = spe_praticien.id";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		// var_dump($lesLignes);
+		return $lesLignes;
+	}
+	public function getLesSpecialitePraticiens(){
+		$req = "SELECT * FROM spe_praticien";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+	
+	public function setLesPraticiensAjout($nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
+		$req = "INSERT INTO praticien(`nom`, `social`, `adresse`, `telephone`, `contact`, `coefficiant_notorieter`, `coefficiant_confiance`, `specialite`)
+				VALUES ('$nom','$social','$adresse','$telephone','$contact','$coefficiant_notorieter','$coefficiant_confiance','$specialite')";
+		// var_dump($req);
+		PdoGsb::$monPdo->query($req);
+	}
+	
+	public function setLesPraticiensModif($id,$nom,$social,$adresse,$telephone,$contact,$coefficiant_notorieter,$coefficiant_confiance,$specialite){
+		$req = "UPDATE praticien SET nom='".$nom."',social='".$social."',adresse='".$adresse."', telephone='".$telephone."',contact='".$contact."',coefficiant_notorieter='".$coefficiant_notorieter."',coefficiant_confiance='".$coefficiant_confiance."',specialite='".$specialite."' where id='".$id."';";
+		// var_dump($req);
+		PdoGsb::$monPdo->query($req);
+	}
+
+	public function setLesPraticiensSupp($id){
+		$req = "DELETE FROM `praticien` where id='".$id."';";
+		// var_dump($req);
+		PdoGsb::$monPdo->query($req);
+	}
+>>>>>>> devJulien
 	
 	public function Gestionnaire($id){
 		$g = false;
