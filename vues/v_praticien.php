@@ -14,8 +14,6 @@
 					<th>Coefficiant confiance</th>
 					<th>Spécialité</th>
 					<th>Gestion</th>
-					<!-- <th>Modifier</th>
-					<th>Supprimer</th> -->
 				</tr>
 			</thead>
 		
@@ -62,9 +60,6 @@
 					}
 				?>
 				</select></td>
-				
-				<!-- <td><a href="#" name="modifier"><img src="images/modifier.png" alt="modifier" name="modifier"/></a></td>
-				<td><a href="#" name="supprimer"><img src="images/supprimer.png" alt="supprimer" name="supprimer"/></a></td> -->
 
 				<td>
 						<input class="btn btn-outline-primary" type="submit" name="modifier" value="Modifier"></br>
