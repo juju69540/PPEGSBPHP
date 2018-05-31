@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /** 
  * Classe d'accès aux données. 
  
@@ -308,7 +308,17 @@ class PdoGsb{
 	
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
-		
+		echo $req;
+		PdoGsb::$monPdo->exec($req);
+	}
+
+	public function getLesPracticiens(){
+		$req = "SELECT practicien.Nom as nom, practicien.Social as social, practicien.Adresse as adresse, practicien.Telephone as telephone,
+				practicien.Contact as contact, practicien.Coefficiant_notorieter as coefnoto, practicien.Coefficiant_confiance as coefconfiance
+				from practicien";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes; 
 		PdoGsb::$monPdo->exec($req);
 	}
 
@@ -366,5 +376,25 @@ class PdoGsb{
 		$laLigne = $res->fetchAll();
 		return $laLigne;
 	}
+<<<<<<< HEAD
 }
+=======
+	
+	public function visiteursModif($id,$nom,$prenom,$login,$mdp,$adresse,$codepostal,$ville,$date){
+		$req = "UPDATE visiteur SET nom='".$nom."',prenom='".$prenom."',login='".$login."', mdp='".$mdp."',adresse='".$adresse."',cp='".$codepostal."',ville='".$ville."',dateEmbauche='".$date."' where id='".$id."';";
+		PdoGsb::$monPdo->query($req);
+	}
+	
+	public function visiteursAjout($id,$nom,$prenom,$login,$mdp,$adresse,$codepostal,$ville,$date){
+		$req = "INSERT INTO `visiteur`(`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`, `type`) VALUES
+			   ('$id','$nom','$prenom','$login','$mdp','$adresse','$codepostal','$ville','$date','autre')";
+		PdoGsb::$monPdo->query($req);
+	}
+	
+	public function visiteurDelete($id){
+		$req = "DELETE FROM `visiteur` where id='".$id."';";
+		PdoGsb::$monPdo->query($req);
+	}
+}
+>>>>>>> devJulian
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 05 Décembre 2017 à 10:33
+-- Généré le :  Jeu 31 Mai 2018 à 19:18
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -63,7 +63,8 @@ CREATE TABLE `fichefrais` (
 INSERT INTO `fichefrais` (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) VALUES
 ('a131', '201709', 0, '0.00', '2017-09-19', 'CR'),
 ('a17', '201709', 0, '0.00', '2017-12-05', 'CL'),
-('a17', '201712', 0, '0.00', '2017-12-05', 'CR');
+('a17', '201712', 0, '0.00', '2018-05-31', 'CL'),
+('a17', '201805', 0, '0.00', '2018-05-31', 'CR');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,11 @@ INSERT INTO `lignefraisforfait` (`idVisiteur`, `mois`, `idFraisForfait`, `quanti
 ('a17', '201712', 'ETP', 0),
 ('a17', '201712', 'KM', 0),
 ('a17', '201712', 'NUI', 0),
-('a17', '201712', 'REP', 0);
+('a17', '201712', 'REP', 0),
+('a17', '201805', 'ETP', 0),
+('a17', '201805', 'KM', 0),
+('a17', '201805', 'NUI', 0),
+('a17', '201805', 'REP', 0);
 
 -- --------------------------------------------------------
 
@@ -132,6 +137,52 @@ CREATE TABLE `lignefraishorsforfait` (
   `date` date DEFAULT NULL,
   `montant` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `praticien`
+--
+
+CREATE TABLE `praticien` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(50) NOT NULL,
+  `social` varchar(50) NOT NULL,
+  `adresse` varchar(100) NOT NULL,
+  `telephone` varchar(10) NOT NULL,
+  `contact` varchar(50) NOT NULL,
+  `coefficiant_notorieter` int(11) NOT NULL,
+  `coefficiant_confiance` int(11) NOT NULL,
+  `specialite` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `praticien`
+--
+
+INSERT INTO `praticien` (`id`, `nom`, `social`, `adresse`, `telephone`, `contact`, `coefficiant_notorieter`, `coefficiant_confiance`, `specialite`) VALUES
+(3, 'patrick', 'ezrzr', 'ezrze', 'rzerz', 'erze', 1, 2, 1),
+(4, 'floflo', 'gregre', '23 tourtereleles', '0646565656', 'gregre', 12, 2, 2),
+(5, 'Julien', 'ergerg', '23 tourtereleles', '0646565656', 'regerg', 25745, 54, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spe_praticien`
+--
+
+CREATE TABLE `spe_praticien` (
+  `id` int(11) NOT NULL,
+  `specialite` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `spe_praticien`
+--
+
+INSERT INTO `spe_praticien` (`id`, `specialite`) VALUES
+(1, 'Medecin'),
+(2, 'Pharmacie');
 
 -- --------------------------------------------------------
 
@@ -157,6 +208,8 @@ CREATE TABLE `visiteur` (
 --
 
 INSERT INTO `visiteur` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`, `type`) VALUES
+('a001', 'Ressouche', 'Gilles', 'ressouche', 'ressouche', 'Avenue Debrousse', '69008', 'Lyon', '2011-02-08', 'gestionnaire'),
+('a002', 'Tiphaine', 'Accary-Barbier', 'accarybarbier', 'accarybarbier', 'Avenue Debrousse', '69008', 'Lyon', '2013-05-09', 'gestionnaire'),
 ('a131', 'Villechalane', 'Louis', 'lvillachane', 'jux7g', '8 rue des Charmes', '46000', 'Cahors', '2005-12-21', 'autre'),
 ('a17', 'Andre', 'David', 'dandre', 'oppg5', '1 rue Petit', '46200', 'Lalbenque', '1998-11-23', 'gestionnaire'),
 ('a55', 'Bedos', 'Christian', 'cbedos', 'gmhxd', '1 rue Peranud', '46250', 'Montcuq', '1995-01-12', 'autre'),
@@ -223,6 +276,18 @@ ALTER TABLE `lignefraishorsforfait`
   ADD KEY `idVisiteur` (`idVisiteur`,`mois`);
 
 --
+-- Index pour la table `praticien`
+--
+ALTER TABLE `praticien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `spe_praticien`
+--
+ALTER TABLE `spe_praticien`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `visiteur`
 --
 ALTER TABLE `visiteur`
@@ -237,6 +302,16 @@ ALTER TABLE `visiteur`
 --
 ALTER TABLE `lignefraishorsforfait`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `praticien`
+--
+ALTER TABLE `praticien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT pour la table `spe_praticien`
+--
+ALTER TABLE `spe_praticien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Contraintes pour les tables exportées
 --
