@@ -1,11 +1,7 @@
 <div class="container" style="margin-bottom: 780px;">
 	<div id="contenu">
 		<h2>Les visiteurs</h2>
-<<<<<<< HEAD
-		<table class="table table-borderless" style="margin-left:5px;">
-=======
 		<table class="table table-borderless" style="position: absolute; left: 240px;">
->>>>>>> devJulian
 			<thead class="thead-light">
 				<tr>
 					<th></th>
@@ -82,21 +78,11 @@
 						<?php echo '<td><input type="text" name="ville" id="ville" value="'.$uneVille.'"></td>'?>
 						<?php echo '<td><input type="text" name="date" id="date" value="'.$uneDateE.'"></td>'?>
 					</tr>
-<<<<<<< HEAD
-						<?php
-							}
-						?>
-				</tr>
-			</table>
-		<INPUT type="button" name="nom" value="Modifier">
-		<INPUT type="button" name="nom" value="Supprimer">
-=======
 					</form>
 					<?php
 						}
 					?>
 				</tr>	
 		</table>
->>>>>>> devJulian
 	</div>
 </div>
