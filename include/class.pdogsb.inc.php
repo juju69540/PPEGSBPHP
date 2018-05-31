@@ -376,9 +376,6 @@ class PdoGsb{
 		$laLigne = $res->fetchAll();
 		return $laLigne;
 	}
-<<<<<<< HEAD
-}
-=======
 	
 	public function visiteursModif($id,$nom,$prenom,$login,$mdp,$adresse,$codepostal,$ville,$date){
 		$req = "UPDATE visiteur SET nom='".$nom."',prenom='".$prenom."',login='".$login."', mdp='".$mdp."',adresse='".$adresse."',cp='".$codepostal."',ville='".$ville."',dateEmbauche='".$date."' where id='".$id."';";
@@ -396,5 +393,4 @@ class PdoGsb{
 		PdoGsb::$monPdo->query($req);
 	}
 }
->>>>>>> devJulian
 ?>
