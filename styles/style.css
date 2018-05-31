@@ -78,7 +78,7 @@ table.table-bordeless{
     width: 180px;    
 }
 .table{
-    margin-left:-240px;
+	margin-left:-240px;
 }
 tr th {
     text-align: center;
@@ -102,4 +102,10 @@ tr th {
 
 td {
 	text-align:center;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+	padding: 19px !important;
+}
+button, select {
+    width: 130px;
 }
