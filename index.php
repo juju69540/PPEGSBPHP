@@ -34,7 +34,6 @@ switch($uc){
 		include("controleurs/c_visiteur.php");
 		break;
 	}
-}
-include("vues/v_pied.php") ;
+} 
 ?>
 

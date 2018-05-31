@@ -376,5 +376,25 @@ class PdoGsb{
 		$laLigne = $res->fetchAll();
 		return $laLigne;
 	}
+<<<<<<< HEAD
 }
+=======
+	
+	public function visiteursModif($id,$nom,$prenom,$login,$mdp,$adresse,$codepostal,$ville,$date){
+		$req = "UPDATE visiteur SET nom='".$nom."',prenom='".$prenom."',login='".$login."', mdp='".$mdp."',adresse='".$adresse."',cp='".$codepostal."',ville='".$ville."',dateEmbauche='".$date."' where id='".$id."';";
+		PdoGsb::$monPdo->query($req);
+	}
+	
+	public function visiteursAjout($id,$nom,$prenom,$login,$mdp,$adresse,$codepostal,$ville,$date){
+		$req = "INSERT INTO `visiteur`(`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`, `type`) VALUES
+			   ('$id','$nom','$prenom','$login','$mdp','$adresse','$codepostal','$ville','$date','autre')";
+		PdoGsb::$monPdo->query($req);
+	}
+	
+	public function visiteurDelete($id){
+		$req = "DELETE FROM `visiteur` where id='".$id."';";
+		PdoGsb::$monPdo->query($req);
+	}
+}
+>>>>>>> devJulian
 ?>
