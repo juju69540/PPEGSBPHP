@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /** 
  * Classe d'accès aux données. 
  
@@ -48,26 +48,28 @@ class PdoGsb{
 		return PdoGsb::$monPdoGsb;  
 	}
 /**
- * Retourne les informations d'un visiteur
- 
- * @param $login 
- * @param $mdp
- * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
-*/
-	public function getInfosVisiteur($login, $mdp){
-		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
-		where visiteur.login='$login' and visiteur.mdp='$mdp'";
-		$rs = PdoGsb::$monPdo->query($req);
-		$ligne = $rs->fetch();
-		return $ligne;
-	}
-
-/**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
  * concernées par les deux arguments
  
  * La boucle foreach ne peut être utilisée ici car on procède
  * à une modification de la structure itérée - transformation du champ date-
+  * Retourne les informations d'un visiteur
+ * @param $login 
+ 
++
+ * @param $mdp
+ 
+ * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
+ 
+*/
+  public function getInfosVisiteur($login, $mdp){
+    $req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
+    where visiteur.login='$login' and visiteur.mdp='$mdp'";
+    $rs = PdoGsb::$monPdo->query($req);
+    $ligne = $rs->fetch();
+    return $ligne;
+  }
+/**
  
  * @param $idVisiteur 
  * @param $mois sous la forme aaaamm
@@ -309,16 +311,6 @@ class PdoGsb{
 	public function getmodifFraisForfait($id,$montant){
 		$req = "UPDATE fraisforfait SET montant=$montant where id='$id'";
 		echo $req;
-		PdoGsb::$monPdo->exec($req);
-	}
-
-	public function getLesPracticiens(){
-		$req = "SELECT practicien.Nom as nom, practicien.Social as social, practicien.Adresse as adresse, practicien.Telephone as telephone,
-				practicien.Contact as contact, practicien.Coefficiant_notorieter as coefnoto, practicien.Coefficiant_confiance as coefconfiance
-				from practicien";
-		$res = PdoGsb::$monPdo->query($req);
-		$lesLignes = $res->fetchAll();
-		return $lesLignes; 
 		PdoGsb::$monPdo->exec($req);
 	}
 
