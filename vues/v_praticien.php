@@ -108,7 +108,7 @@
 			<?php
 				if(count($_POST) != 0 && isset($_POST['ajouter'])){
 					if(empty($_POST['ajoutnom'])){
-						echo "<script>alert('ecrire tout');</script>";
+						echo "<script>alert('Veuillez remplir tout les champs pour l'ajout d'un Praticien);</script>";
 					}
 					else{
 						echo "<script>onClick='return confirm(\'Voulez-vous vraiment l\'ajouter ?\')'</script>";
