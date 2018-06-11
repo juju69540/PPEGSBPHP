@@ -101,10 +101,20 @@
 					</select>
 				</td>
 				
-				<td><input onClick="return confirm('Voulez-vous vraiment l\'ajouter ?')" class="btn btn-outline-success" type="submit" name="ajouter" id="ajouter" value="Ajouter"></td>
+				<td><input class="btn btn-outline-success" type="submit" name="ajouter" id="ajouter" value="Ajouter"></td>
+			
 			</tr>
 			</form>
-			
+			<?php
+				if(count($_POST) != 0 && isset($_POST['ajouter'])){
+					if(empty($_POST['ajoutnom'])){
+						echo "<script>alert('ecrire tout');</script>";
+					}
+					else{
+						echo "<script>onClick='return confirm(\'Voulez-vous vraiment l\'ajouter ?\')'</script>";
+					}
+				}	
+			?>
 		</table>
 		</div>
 	</div>

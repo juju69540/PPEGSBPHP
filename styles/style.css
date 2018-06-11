@@ -72,13 +72,15 @@ table.table.table-borderless input {
 	padding-top: 10px;
 	text-align: center;
 	border: none;
+	width: 138px;
+	cursor: pointer;
 }
 table.table-bordeless{
     table-layout: auto;
     width: 180px;    
 }
 .table{
-	margin-left:-240px;
+	margin-left:-233px;
 }
 tr th {
     text-align: center;
